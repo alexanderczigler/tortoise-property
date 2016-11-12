@@ -10,12 +10,34 @@ if (isNaN(parseInt(nn)) || parseInt(nn) < 0) {
   process.exit()
 }
 
+// Make nn a number.
+nn = parseInt(nn)
+
 console.log(`Does ${nn} have the Tortoise property? Let's find out...`)
+console.log()
 
 if (nn % 2) {
   console.error(`${nn} is odd, so it cannot be the difference between two odd primes.`)
   process.exit()
 }
 
-// TODO: Find the closest prime, p1, where p1 > nn
-// TODO: Find next prime, p2, where p2 <= (p1 - nn)
+let insanity = 0
+let p1 = 0
+let p2 = 0
+
+// I am taking a Lovecraftian approach to this.
+while (insanity < 10000) {
+  insanity++
+  p1 = nn + insanity
+
+  // Figure out the closest prime p1 above nn (p1 > nn)
+  if (prime.is(p1)) {
+    p2 = p1 - nn
+
+    // TODO: If p2 is not a prime, loop and increase p2 a number of times but not for too long.
+    if (prime.is(p2)) {
+      console.log(`Yes, ${nn} is the difference between primes ${p2} and ${p1}`)
+      process.exit()
+    }
+  }
+}
