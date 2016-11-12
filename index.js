@@ -32,12 +32,18 @@ while (insanity < 10000) {
 
   // Figure out the closest prime p1 above nn (p1 > nn)
   if (prime.is(p1)) {
-    p2 = p1 - nn
+    p2 = 0
+    let i = 0
 
-    // TODO: If p2 is not a prime, loop and increase p2 a number of times but not for too long.
-    if (prime.is(p2)) {
-      console.log(`Yes, ${nn} is the difference between primes ${p2} and ${p1}`)
-      process.exit()
+    while (p2 < nn) {
+      p2 = p1 - nn + i
+
+      if (prime.is(p2) && p1 - p2 === nn) {
+        console.log(`Yes, ${nn} is the difference between primes ${p2} and ${p1}`)
+      }
+
+      i++
     }
+    
   }
 }
