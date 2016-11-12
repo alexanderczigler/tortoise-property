@@ -1,0 +1,27 @@
+{
+  "name": "tortoise-property",
+  "version": "1.0.0",
+  "description": "an attempt at finding numbers with the Tortoise property (from Gödel, Escher, Bach)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha ./test/**/*.spec.js"
+  },
+  "keywords": [
+    "gödel",
+    "escher",
+    "bach",
+    "tortoise",
+    "prime",
+    "numbers"
+  ],
+  "author": "src@ilix.se",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon-chai": "^2.8.0"
+  }
+}
